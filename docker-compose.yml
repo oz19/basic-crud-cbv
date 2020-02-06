@@ -1,0 +1,14 @@
+# Compose file format (depends on Docker Engine release)
+# Check https://docs.docker.com/compose/compose-file/compose-versioning/
+# Not get confused with Python version; has nothing to do with it.
+version: '3.7'
+
+# Containers to be run
+services:
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
