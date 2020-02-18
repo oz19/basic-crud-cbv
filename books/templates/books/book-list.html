@@ -5,7 +5,7 @@
         <div class='row mb-3 mt-3'>
             <div class='col'>
                 <div class='text-right'>
-                    <a href="#" class='btn btn-dark' role='button'>Add book</a>
+                    <a href="{% url 'add-book' %}" class='btn btn-dark' role='button'>Add book</a>
                 </div>
             </div>
         </div>
@@ -24,8 +24,8 @@
                     <tr>
                         <td><a href="{% url 'book-detail' book.isbn %}">{{ book.name }}</a></td>
                         <td>
-                            <a href="#" class='btn btn-dark' role='button'>Edit</a>
-                            <a href="#" class='btn btn-danger' role='button'>Delete</a>
+                            <a href="{% url 'edit-book' book.isbn %}" class='btn btn-dark' role='button'>Edit</a>
+                            <a href="{% url 'delete-book' book.isbn %}" class='btn btn-danger' role='button'>Delete</a>
                         </td>
                     </tr>
                     {% endfor %}

@@ -1,0 +1,23 @@
+{% extends 'books/base.html'  %}
+
+{% block content %}
+    <div class='container'>
+
+        <div class='row mb-3 mt-3'>
+            <div class='col'>
+                <div class='text-right'>
+                    <a href="{% url 'book-list' %}" class='btn btn-dark' role='button'>Go to book list</a>
+                </div>
+            </div>
+        </div>
+
+        <div class='row'>
+            <form method="POST">
+                {% csrf_token %}
+                <p>Are you sure you want to delete "{{ book.name }}"?</p>
+                <input type="submit" class="btn btn-danger" value="Confirm">
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
